@@ -38,8 +38,5 @@ testem.log
 .DS_Store
 Thumbs.db
 
-# Sorry NPM fans,but YARN only.
-package-lock.json
-
 .env.local
 docker-compose.override.yaml
