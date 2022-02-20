@@ -14,8 +14,8 @@ describe('AppService', () => {
   });
 
   describe('getData', () => {
-    it('should return "Welcome to order!"', () => {
-      expect(service.getData()).toEqual({ message: 'Welcome to order!' });
+    it('should return "Welcome to gateway!"', () => {
+      expect(service.getData()).toEqual({message: 'Welcome to gateway!'});
     });
   });
 });

@@ -1,8 +1,10 @@
 {
   "version": 2,
   "projects": {
+    "data-model": "libs/data-model",
     "front-end": "apps/front-end",
     "front-end-e2e": "apps/front-end-e2e",
+    "gateway": "apps/gateway",
     "order": "apps/order",
     "payment": "apps/payment"
   }

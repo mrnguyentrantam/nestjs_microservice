@@ -17,7 +17,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@setel/data": [
+        "libs/data/src/index.ts"
+      ],
+      "@setel/data-model": [
+        "libs/data-model/src/index.ts"
+      ]
+    }
   },
   "exclude": [
     "node_modules",

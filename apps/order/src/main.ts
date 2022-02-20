@@ -1,22 +1,17 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- */
+import { NestFactory } from "@nestjs/core";
+import { Transport, TcpOptions } from "@nestjs/microservices";
+import { OrderModule } from "./app/order.module";
 
-import { Logger } from '@nestjs/common';
-import { NestFactory } from '@nestjs/core';
-
-import { AppModule } from './app/app.module';
+import { ConfigService } from "./app/config/config.service";
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  const globalPrefix = 'api';
-  app.setGlobalPrefix(globalPrefix);
-  const port = process.env.PORT || 3333;
-  await app.listen(port);
-  Logger.log(
-    `🚀 Application is running on: http://localhost:${port}/${globalPrefix}`
-  );
+  const app = await NestFactory.createMicroservice(OrderModule, {
+    transport: Transport.TCP,
+    options: {
+      host: "0.0.0.0",
+      port: new ConfigService().get("port"),
+    },
+  } as TcpOptions);
+  await app.listen();
 }
-
 bootstrap();
